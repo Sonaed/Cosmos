@@ -1,4 +1,7 @@
 Fait par IA : J'apprend Puthon et Pyside actuellement afin de ne plus dépendre d'outil comme GPT mais le besoin de refaire des outils pour mon workflow était important 
+Mon objectif est de réaliser mes outil moi-même et de les adapté au besoin que je peux avoir et qui pourrait interessé un plus grand nombre de personne 
+
+Cosmos fait partie d'un environement de travail appelé Existence qui sera released quand ready
 
 # Cosmos — application de bureau
 
@@ -59,3 +62,8 @@ Interface bleu nuit avec nébuleuses, étoiles en parallaxe lors de la rotation 
 ### Galaxies et étoiles
 
 Les notes existantes deviennent des galaxies sur la carte principale, sans perdre leur contenu. Double-cliquer une galaxie ouvre sa carte d’étoiles, initialement vide. Le bouton « Ouvrir la carte » offre le même accès au clavier. Chaque étoile est une note terminale : aucun troisième niveau ne peut être ouvert ou créé. « ← Galaxies » revient à la carte principale. Les liens, la corbeille, la recherche et le placement sont propres à la carte ouverte. Les sauvegardes JSON du projet comprennent les cartes d’étoiles ; leurs notes possèdent aussi une copie Markdown sur disque.
+
+<img width="1508" height="950" alt="image" src="https://github.com/user-attachments/assets/b3524400-3f59-4a53-952e-061b30bc9a46" />
+
+<img width="1508" height="950" alt="image" src="https://github.com/user-attachments/assets/25469139-a91e-4d0c-b7b8-2e3b03f9000b" />
+
