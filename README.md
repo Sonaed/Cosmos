@@ -1,3 +1,5 @@
+Fait par IA : J'apprend Puthon et Pyside actuellement afin de ne plus dépendre d'outil comme GPT mais le besoin de refaire des outils pour mon workflow était important 
+
 # Cosmos — application de bureau
 
 Cosmos est une application Linux de notes reliées avec fenêtre, menus et stockage local propres à l’application. L’interface graphique est embarquée dans Qt WebEngine ; aucun onglet de navigateur ni serveur web n’est nécessaire.
