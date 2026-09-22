@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+50e455c4da404c2e33f859d4d4c10dd8 .qt/qml_imports/cosmos-desktop_build.cmake
+b4f192bfc47b7340303d071def2e853e CMakeFiles/cosmos-desktop_autogen
+b4f192bfc47b7340303d071def2e853e CMakeFiles/cosmos-desktop_qmlimportscan
+1d6104705ca478e0daca7445274533bc cosmos-desktop_autogen/timestamp

@@ -1,28 +1,59 @@
-# Cosmos
-Made With AI:
+# Cosmos — application de bureau
 
-I'm still learning to code but I needed some Arch Compatible Software for my workflow.
+Cosmos est une application Linux de notes reliées avec fenêtre, menus et stockage local propres à l’application. L’interface graphique est embarquée dans Qt WebEngine ; aucun onglet de navigateur ni serveur web n’est nécessaire.
 
-At some point COSMOS will be remade with full humane code (but I have a long road for that) 
+## Compiler et lancer
 
-Cosmos is a Python Based Linux native (but probably wind-compatible) alternative to Obsidian 
+Pré-requis : C++17, CMake 3.21+ et Qt 6 avec Widgets et WebEngineWidgets.
 
-I know obsidian was already linux available but I like having my own tool and I'm preparing my full linux creative suit environement 
+```sh
+./build-desktop.sh
+./start-desktop.sh
+```
 
-The Creative Environement:
-  -Existence (App Hub with to download and launch the creative app) [not released]
-  -Atlas (Simpler Vector based illustration Software) [not released]
-  -Nebula (Painting Software) [not released]
-    -Singularity (Simple image converter for .webp lightweight)
-  -Cosmos (Note and Brainstorm for ideas in a 3d linked Node ui) [released]
-  -More to come 
+Le binaire compilé est `build/cosmos-desktop`. Pour ouvrir Cosmos, lancer `./start-desktop.sh`.
 
-Cosmos won't get much update for a while as it's the most ready file with singularity expect for a language update.
-currently available language: 
-  -French
-  
-My next step is Nebula (which is working but still for from ready) 
+## Installer dans le menu des applications
 
-Cosmos:
-<img width="1508" height="950" alt="image" src="https://github.com/user-attachments/assets/1f013a48-a293-43c0-8a8c-8322ecc06e01" />
-<img width="1508" height="950" alt="image" src="https://github.com/user-attachments/assets/7dbd2902-6361-4d85-86f8-901ad88d4273" />
+```sh
+cmake --install build --prefix "$HOME/.local"
+```
+
+Cela installe le programme, son interface, son icône et son lanceur `.desktop` dans `~/.local`.
+
+## Données
+
+Les projets sont enregistrés automatiquement dans un fichier `vault/workspace.json` sous le dossier de données de Cosmos, avec une écriture atomique en C++. Le cache de l’interface est conservé en complément ; le fichier natif permet de récupérer les projets si ce cache disparaît. Une seule instance utilise le coffre à la fois.
+
+Le menu **Fichier → Ouvrir les sauvegardes sur disque** ouvre ce dossier. Il contient des copies Markdown par projet, un manifeste décrivant leur nom et leurs fichiers, et jusqu’à 30 sauvegardes JSON datées (au plus une nouvelle version par minute de modifications). Les copies Markdown renommées ou retirées sont archivées. Ces copies ne sont pas synchronisées en direct avec un éditeur externe : utiliser **Importer des notes Markdown** pour reprendre des fichiers modifiés ailleurs.
+
+Les exports JSON et Markdown restent disponibles. L’import JSON ajoute des projets sans remplacer les projets ouverts.
+
+## Fonctions
+
+- Projets indépendants : création, changement de projet, renommage, suppression confirmée, liste des notes par projet et mémorisation de chaque caméra.
+- Les anciennes notes sont automatiquement conservées dans « Mon premier projet ». La recherche, les tags, les liens et les notes quotidiennes restent propres au projet actif.
+- Export du projet actif ou de l’ensemble des projets. L’import ajoute des projets indépendants sans remplacer ceux qui existent.
+- Graphe de notes avec rendu WebGL 3D, vue 2D, rotation, zoom et déplacement des nœuds.
+- Nœuds sphériques éclairés, taille selon le nombre de connexions, filtre de voisinage, affichage des libellés, centrage sur une note et placement automatique avec annulation.
+- Édition des notes, espaces, tags, favoris et recherche plein texte.
+- Enregistrement automatique à chaque modification, aperçu Markdown et fin d’édition avec `Ctrl+S`.
+- Mode Écrire avec éditeur agrandi, mentions entrantes et mise à jour des références lors du renommage d’un titre non ambigu.
+- Corbeille pour restaurer des notes avec leurs liens disponibles et restaurer des projets supprimés.
+- Import de fichiers Markdown depuis le sélecteur de fichiers du système.
+- Titres, listes, gras, italique, code et tâches à cocher dans la vue de lecture.
+- Connexions explicites et liens de type `[[Titre de note]]`.
+- Les liens vers des notes existantes sont recalculés dans le graphe à chaque enregistrement ; retirer une référence retire sa connexion automatique, sans retirer les connexions manuelles.
+- Journal du jour avec sections et cases à cocher.
+- Export Markdown, sauvegarde et restauration du coffre en JSON.
+- Menus de bureau et raccourcis `Ctrl+N`, `Ctrl+J`, `Ctrl+K` et `Ctrl+Shift+S`.
+
+Dans le graphe : glisser le fond fait tourner la caméra ; la molette zoome ; `Maj` ou le bouton droit permettent le déplacement de la vue. Glisser un nœud déplace la note, `Alt` + glisser modifie sa profondeur et un double clic centre la caméra. `Ctrl+Shift+N` crée un projet.
+
+### Identité Cosmos
+
+Interface bleu nuit avec nébuleuses, étoiles en parallaxe lors de la rotation du graphe, repères orbitaux et palette de constellations. Le bouton **Ambiance** masque le décor et mémorise ce choix sur cet appareil. Le décor ne crée aucune note et ne fait tourner aucune animation en continu. Les polices utilisent les ressources du système, sans téléchargement externe.
+
+### Galaxies et étoiles
+
+Les notes existantes deviennent des galaxies sur la carte principale, sans perdre leur contenu. Double-cliquer une galaxie ouvre sa carte d’étoiles, initialement vide. Le bouton « Ouvrir la carte » offre le même accès au clavier. Chaque étoile est une note terminale : aucun troisième niveau ne peut être ouvert ou créé. « ← Galaxies » revient à la carte principale. Les liens, la corbeille, la recherche et le placement sont propres à la carte ouverte. Les sauvegardes JSON du projet comprennent les cartes d’étoiles ; leurs notes possèdent aussi une copie Markdown sur disque.

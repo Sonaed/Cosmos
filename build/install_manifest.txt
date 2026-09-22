@@ -1,0 +1,12 @@
+/home/deanos/.local/bin/cosmos-desktop
+/home/deanos/.local/share/cosmos/index.html
+/home/deanos/.local/share/cosmos/app.js
+/home/deanos/.local/share/cosmos/native-client.js
+/home/deanos/.local/share/cosmos/recovery.js
+/home/deanos/.local/share/cosmos/styles.css
+/home/deanos/.local/share/cosmos/cosmos-theme.css
+/home/deanos/.local/share/cosmos/cosmos-scene.js
+/home/deanos/.local/share/cosmos/galaxies.js
+/home/deanos/.local/share/cosmos/icon.svg
+/home/deanos/.local/share/applications/cosmos.desktop
+/home/deanos/.local/share/icons/hicolor/scalable/apps/cosmos.svg
