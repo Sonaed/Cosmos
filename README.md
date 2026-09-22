@@ -1,4 +1,4 @@
-Fait par IA : J'apprend Puthon et Pyside actuellement afin de ne plus dépendre d'outil comme GPT mais le besoin de refaire des outils pour mon workflow était important 
+Fait par IA : J'apprend Python et Pyside actuellement afin de ne plus dépendre d'outil comme GPT mais le besoin de refaire des outils pour mon workflow était important 
 Mon objectif est de réaliser mes outil moi-même et de les adapté au besoin que je peux avoir et qui pourrait interessé un plus grand nombre de personne 
 
 Cosmos fait partie d'un environement de travail appelé Existence qui sera released quand ready
