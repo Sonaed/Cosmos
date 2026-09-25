@@ -67,3 +67,9 @@ Les notes existantes deviennent des galaxies sur la carte principale, sans perdr
 
 <img width="1508" height="950" alt="image" src="https://github.com/user-attachments/assets/25469139-a91e-4d0c-b7b8-2e3b03f9000b" />
 
+-------------------------------------------------------------------
+En cours: 
+Amélioration des performance
+Prise en charge de l'importation des export Notion
+Amélioration globale de l'interface de note + un acceuile --> les graphe ne sont plus le centre de l'application 
+
