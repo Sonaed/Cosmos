@@ -1,0 +1,49 @@
+{
+  "protocol": "existence.v1",
+  "id": "cosmos",
+  "name": "Cosmos",
+  "kind": "universe",
+  "version": "26.0",
+  "entrypoint": "cosmos-desktop",
+  "working_dir": ".",
+  "state": "available",
+  "capabilities": [
+    "knowledge_graph",
+    "notes",
+    "projects",
+    "star_maps",
+    "markdown",
+    "resource_export"
+  ],
+  "ecosystem_id": "existence",
+  "entity_type": "universe",
+  "resource_namespace": "resource://existence/cosmos",
+  "resource_types": [
+    "knowledge_workspace",
+    "project",
+    "document",
+    "reference"
+  ],
+  "permissions": [
+    "read_resource",
+    "write_resource",
+    "reference_resource",
+    "send_message"
+  ],
+  "view": {
+    "embeddable": true,
+    "mode": "webengine",
+    "protocol": "existence.view.v1"
+  },
+  "resources": [
+    {
+      "uri": "resource://existence/cosmos/workspace",
+      "type": "knowledge_workspace",
+      "lifecycle": "active"
+    }
+  ],
+  "communications": [
+    "qwebchannel"
+  ],
+  "dependencies": []
+}

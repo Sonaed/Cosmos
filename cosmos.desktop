@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Cosmos
+GenericName=Espace de pensée
+Comment=Écrire, relier et explorer ses idées
+Exec=cosmos-desktop
+Icon=cosmos
+Terminal=false
+Categories=Office;Utility;
+StartupNotify=true
