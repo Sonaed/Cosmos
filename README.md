@@ -1,4 +1,6 @@
 # Cosmos — application de bureau
+Fait par IA : J'apprend Python et Pyside actuellement afin de ne plus dépendre d'outil comme GPT mais le besoin de refaire des outils pour mon workflow était important 
+Mon objectif est de réaliser mes outil moi-même et de les adapté au besoin que je peux avoir et qui pourrait interessé un plus grand nombre de personne 
 
 Cosmos est une application Linux de notes reliées avec fenêtre, menus et stockage local propres à l’application. L’interface graphique est embarquée dans Qt WebEngine ; aucun onglet de navigateur ni serveur web n’est nécessaire.
 
@@ -139,3 +141,41 @@ Cosmos s’ouvre maintenant sur un **atelier** : les pages d’abord, le graphe 
 - Index de navigation (liens Notion) construits seulement au premier besoin ; titres des liens `[[…]]` mis en cache ; mentions entrantes mises en cache.
 - Saisie du titre : l’arborescence se met à jour après une courte pause, plus à chaque lettre.
 - Sauvegarde : regroupée après 1,2 s de pause. Au-delà de ~4,5 Mo, le coffre n’est plus copié dans le cache du navigateur (inutile et lent) : le fichier natif fait foi. Côté C++, la vérification du JSON se fait dans le fil d’écriture, plus dans l’interface. Les gros coffres (> 20 Mo) gardent 10 sauvegardes datées au lieu de 30.
+  
+
+Cosmos fait partie d'un environement de travail appelé Existence qui sera released quand ready
+
+# Cosmos — application de bureau
+
+Cosmos est une application Linux de notes reliées avec fenêtre, menus et stockage local propres à l’application. L’interface graphique est embarquée dans Qt WebEngine ; aucun onglet de navigateur ni serveur web n’est nécessaire.
+
+## Compiler et lancer
+
+Pré-requis : C++17, CMake 3.21+ et Qt 6 avec Widgets et WebEngineWidgets.
+
+```sh
+./build-desktop.sh
+./start-desktop.sh
+```
+
+Le binaire compilé est `build/cosmos-desktop`. Pour ouvrir Cosmos, lancer `./start-desktop.sh`.
+
+## Installer dans le menu des applications
+
+```sh
+cmake --install build --prefix "$HOME/.local"
+```
+
+Cela installe le programme, son interface, son icône et son lanceur `.desktop` dans `~/.local`.
+
+## Données
+
+Les projets sont enregistrés automatiquement dans un fichier `vault/workspace.json` sous le dossier de données de Cosmos, avec une écriture atomique en C++. Le cache de l’interface est conservé en complément ; le fichier natif permet de récupérer les projets si ce cache disparaît. Une seule instance utilise le coffre à la fois.
+
+Le menu **Fichier → Ouvrir les sauvegardes sur disque** ouvre ce dossier. Il contient des copies Markdown par projet, un manifeste décrivant leur nom et leurs fichiers, et jusqu’à 30 sauvegardes JSON datées (au plus une nouvelle version par minute de modifications). Les copies Markdown renommées ou retirées sont archivées. Ces copies ne sont pas synchronisées en direct avec un éditeur externe : utiliser **Importer des notes Markdown** pour reprendre des fichiers modifiés ailleurs.
+
+Les exports JSON et Markdown restent disponibles. L’import JSON ajoute des projets sans remplacer les projets ouverts.
+
+<img width="1508" height="950" alt="image" src="https://github.com/user-attachments/assets/b3524400-3f59-4a53-952e-061b30bc9a46" />
+
+<img width="1508" height="950" alt="image" src="https://github.com/user-attachments/assets/25469139-a91e-4d0c-b7b8-2e3b03f9000b" />
